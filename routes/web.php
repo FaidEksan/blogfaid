@@ -20,5 +20,5 @@ Route::get('/about', function(){
 
 //Mengarah ke Halaman Contact
 Route::get('/contact', function(){
-    return view('contact', ['nama'=>'M Faid Eksan','prod'=>'Teknik Informatika', 'ig'=>'@faideksan', 'noWa'=>'082140256923','mail'=>'faideksanfakrulloh@gmail.com']);
+    return view('contact', ['nama'=>'M Faid Eksan','prod'=>'Teknik Informatika', 'wa'=>'082140256923', 'gitHub'=>'Faid Eksan','mail'=>'faideksanfakrulloh@gmail.com']);
 });
