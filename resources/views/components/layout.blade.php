@@ -7,7 +7,7 @@
     @vite('resources/css/app.css')
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <title>Myblog - M Faid Eksan F 2110651148</title>
+    <title>{{ $tittle }} - M Faid Eksan F 2110651148</title>
 </head>
 <body>
     <div class="min-h-full">
