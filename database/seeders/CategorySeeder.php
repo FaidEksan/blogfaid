@@ -15,18 +15,21 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         Category::create([
-            'name' => 'Aplikasi Hp',
-            'slug' => 'aplikasi-sp'
+            'name' => 'Web Developer',
+            'slug' => 'web-developer',
+            'color' => 'red'
         ]);
 
         Category::create([
-            'name' => 'Website Resmi',
-            'slug' => 'website-resmi'
+            'name' => 'Data Scientis',
+            'slug' => 'data-scientis',
+            'color' => 'blue'
         ]);
 
         Category::create([
-            'name' => 'Machine Learning',
-            'slug' => 'mesin-learning'
+            'name' => 'Front end Developer',
+            'slug' => 'front-end-developer',
+            'color' => 'yellow'
         ]);
     }
 }

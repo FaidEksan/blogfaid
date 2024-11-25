@@ -15,7 +15,10 @@ Route::get('/', function () {
 
 //Mengarah ke Halaman My Blog
 Route::get('/posts', function() {
-    return view('posts', ['tittle' => 'My Blog', 'posts' => Post::all()]);
+    //$posts = Post::with(['author', 'category'])->latest()->get();
+    $posts = Post::latest()->get();
+
+    return view('posts', ['tittle' => 'My Blog', 'posts' => $posts ]);
 });
 
 //Mengarah ke Halaman POst
@@ -27,14 +30,14 @@ Route::get('/posts/{post:slug}', function(Post $post) {
 
 //Mengarah ke Halaman POst ber Authors
 Route::get('/authors/{user:username}', function(User $user) {
-
+    //$posts = $user->posts->load('category', 'author');
     return view ('posts', ['tittle' => count($user->posts) . ' Articles by ' . $user->name, 'posts' => $user->posts]);
 });
 
 
-//Mengarah ke Halaman POst ber Category
+//Mengarah ke Halaman Post ber Category
 Route::get('/categories/{category:slug}', function(Category $category) {
-
+    // $posts = $category->posts->load('category', 'author');
     return view ('posts', ['tittle' => ' Articles : ' . $category->name, 'posts' => $category->posts]);
 });
 
