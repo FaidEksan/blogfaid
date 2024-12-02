@@ -16,9 +16,8 @@ Route::get('/', function () {
 //Mengarah ke Halaman My Blog
 Route::get('/posts', function() {
     //$posts = Post::with(['author', 'category'])->latest()->get();
-    $posts = Post::latest()->get();
 
-    return view('posts', ['tittle' => 'My Blog', 'posts' => $posts ]);
+    return view('posts', ['tittle' => 'My Blog', 'posts' => Post::filter(request(['search', 'category', 'author']))->latest()->get() ]);
 });
 
 //Mengarah ke Halaman POst
